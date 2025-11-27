@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rhino Web to Lead Form</title>
+
+    <style>
+        body {
+            background-color: #ffffff;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-wrapper {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px;
+            background: #ffffff;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto 20px auto;
+            max-width: 180px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ff6600; /* Rhino orange */
+            font-size: 26px;
+        }
+
+        label {
+            font-weight: 600;
+            color: #ff6600; /* Rhino orange */
+        }
+
+        .form-row {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-bottom: 18px;
+        }
+
+        input, select {
+            padding: 12px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-size: 15px;
+            background: #ffffff;
+            color: #333;
+        }
+
+        /* Radio buttons spacing */
+        .radio-option {
+            margin: 4px 0;
+            color: #333;
+        }
+
+        button {
+            background: #ff6600;
+            color: white;
+            border: none;
+            padding: 14px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 30px;
+            width: 100%;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-wrapper">
+
+        <!-- Rhino Logo (working/public) -->
+        <img class="logo"
+             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAV4AAACQCAMAAAB3YPNYAAAA1VBMVEX///8BAQEAAADvYiT19fVTU1PIyMjwTwDxXCTe3t4lJSWOjo7xWiBPT0/
+			 wTADPz89ZWVm2trYzMzPxVxm/v7/wUw/2lHPxYS5DQ0P/+vj+8Ov839b6yrv95dzvXx33pIj6wbD0hGTzfVLycET5t6H82c7vXBX0jW3zfFn97ej6zsPyZzfd3d3uVgDp6elsbGzvZyqkpKSBgYEuLi4PDw93d3eampoaGhrwbTXxdkL2m3zzdUpjY2P1noD1porxe0nyhFf4sZv0kGfvPgD5xLX5u6n1knhdS7f6AAAT2UlEQVR4nO2dC3uqOhaG2dYW2lJ7SaMFBa9g1WrvrdVq1aPz/
+			 3/SrECAAIliq515zs6aZ45bTEjy8mXlSqoou7bj88v7l/zObytNyQ8eX89OcmAS747t+PLt8z3n2R+Jd5d2fP54+ELJeibx7siIO7g4yQWqBbLefyTendh5jhVtaBLvbuyIlewfqd4d21FKuFK9OzSJd68mncNeTap3rybx7tWkc9irSfXu1STevZp0Dns1qd69msS7V5POYa8m1btXk+rdq0n17tUk3qTdHX5enB5/5pWjp58zkM4hafnzm9Pju9ybcngz+PHNpHrTdnip3F3dvF0d7ka9Em/
+			 cCN7Dx9z1xW7UK51D3Ajes/zj4FA6h++Y1V3Np9XJZDpv1ZxO+vczwHujKIOtfW9+MDg+jkXaBm/++O7u/O7u+H9IfgA5OL87Hnw3Cx2n1TiwXcbsh0WtbMYCHQ2U/JHi/
+			 T+7Xb+9XtzcXD2fxDx2Zudwd3p/dvIOP7w/33y+Ph5/s3w/sPzl0+fz+0su93JydXh/er09YmsyBJ4HCbP7dmNqbo4ds1j585f3udBukng3q/f69SWXsJen862LB+o7ygol8fzO326SOcjdXG5D2Fh+9dNsKWG3X+xmLcLd9dPN+z1z4e2E2eCUxrtBvYO3Z28bTzwM2FYta/
+			 74/O3i6uX9bnP+j4+eztj8A9yzaIsWk8fcyWPW5M3WUMTWN9dtVIyNWbs8vb/yHu1FyOf6KrbJaVv1PsajM0FyJ5fZyja4Pn2l4jtZjzd/fXrvh2Tw3n3yc0CycJ9NwJWP/
+			 lq4vpNoWOKMnV+/HQbVBlI+o+nmXxN52w7v3Q0/QMbSDc4vT5lc/VmD9+768ZPJf4h38CSAS7OQoQGyFpvh+oCnHAEPQB2HVy9Bxvy6SyEObpKVaivn8PiSS/
+			 yQCCZ0EPnB8ePr2XM8V3y8+QH4jZt3Zo/mn0i9R1dpzxT7lrveRLcydLPA9VzEVzkZ+/WKs8sxd+XxGVylNz9uod5PsW6CcGd8/V6evfP2XuZO0l2OqNFiA1K812ukG2Rhg36n2aRLBXzQSkTnZiD3TIo94PyUHS/
+			 n2XBCfnLLdCpw2By8h7ygFO9Tlhzk1jWx5lc/O1xi/WLcQXArbu4k4JOsVJmdw+DZ+22tcyAhue3bKb9G8/Be8NLw8T4x+Rc5B+KhxHQ7H1tI1zc3zpf/SMmrPdy6nVW9mbRLgj7zxHPKjyvAywlI8L5mzAH/
+			 CROzhlvTBb6zzXihxvBrVka8xxnpQtC3PeG9yJiDRJEY63yHLvBdMPrlO4dc/lxQP7M5hxvBD+lvuWcu3h87h7f0QILvHITyNRrfogt8JwxevqagS5bhUQvU+2djg80G5RTux+p9fcyeA+gncekuMnfIUnznEV6+eu8F/
+			 cVs6hXohP/tPl20H6v35CVLuxpWNt4U0/zbdKH/4KxVr1h+2dS7jeVyu1fvn63ylctxJh+cH9A9sD+CiWBRkqLrO8f7J5eePPsx3i1zkK5AxsE3Ha9vYfdhyxq9B+eQO+Xg/ZlzyJ449SWp3uH0J+IlfCtr1St80HtQ7+v/XL2pkZv18AO0RPf2x/8N3vSS9S/j/ZOaeJj9QLx2m/Dt+72HfTuH6H1joXO4SlXN3TqHMAfCAibHNuWfuAbXi21/
+			 mPtWLynV++vT0+fzuo4wB9ru1EuycPb0dH+Wmn6LhXqK33SSAa9tu67Naf/soe9Z3NV+8ZLeczBkGJyeCIPmcqlZ3F3hhZpxGlSN6zWj5ETXwdo4TQZoPxbVyYKzjOEWTW8iyD7w8O7LOUB7zPa4jq9E9TOX7pntyjnkngbpu/KcQ3zWbMOIwnWHs5plGtB9M53U2M5d0dG0S5Y31zx77nPOrN5kizV4EYTl4uWH3E69qeGCcA4tjnfdZIPt9t1il114r4VS92PZToB3kg1vfP06I97cZ7I/
+			 cC2coNgP3vRCT14wkfInd8YG6wrp2v1hMbUiXAl+9ajaY0OZ0RuYm51DaDQjWZ1DeqNO/oa/8rYn58AbrjwKshvHKxpSgL9dcXY9Kau+L1aHfLpVJcDbr6xXry/Xp8fL66Pz4wE19sZC9W41D7Yf9fJmOnnLW2n18ocUbn/hpO/oPw+Pb6fs4bUUg+J1R2vVC43T/eXaDVlC9XKnqI9+U73cB5y/SO9oSanX5PUb3IdiahU4si+XDCOWfd/hml/
+			 UCzeMNeqFdnfTXjCxenlrEHnR2sY+1LvdKhOLt5LG6/ZH4j0iYJ2GOvWdSr/DrNA9WGK8a9agQhNPp3OXX38V71MqKNibIAss3lS3zO4v1sIlRto7oOou4bMcPhVH7Bz4+YubcDHogutSXn7TOXD3hzxmcA6jBF73o7KZBJgVLFOE8ndrQvXmXjJssROqN91oE3v+PfUKdnBfblZv0DAF3dj+KOP20lWfTuOEQ2p3KsbLJxQ34Uoxf+/h1S/
+			 ifefmIANec+iz+fC2ltkPou5CymZfNGjkVWZC58BZQ0ib0DnwdxZd/aJzOEuFJHa52Tl0Aukt50O7/7HR60YRqcqdaBj3JVwM4qyApU2oXv5Oxt9UL2eBVMmk3k7gGz4Uw1lmpxsaM932IcTL236Qsi1fXflNvPyGOQveQHz2h7Ptpn5iFtMyPgidA//pJ2zLF69+0znwm44MziGajbTd4TfEW4zjFag3S8v2/6zeNXgzqhesv718V2y3TqzeTDvz/
+			 43q7TDzZW4WCDFzYkM+se/duGub2L9SvQyeYRYIMYuPqMU9h78Wb9Dv9fut21psPmhNvzcz3n+bc2DWKuxFIrphgqXeTzEYDx3D606kepPqZZp+txiL3K02Ph6GH4tpYmqy+zAKr3RjeFcSbwpvNGPGbtQlL7d5C++27fa/YpM85oHbn1BNL9iFpDUzZn+tc/BmxVN4jSn7WqbtTlgXMXUP3EaNXIl1y9bM9/7F6o3cJ1k3o3RniTn2/
+			 ozhS1aB7P5HzYlPFa9ZrfiL8UZrbRHe9J4z94uJ4fqSduOh1q21/b3OIZpPD/GuOMtv/VoUY8ZduichpHpT6q2EeKnv5b4iZH9F7qHKXbp3O1K9HPWawVIkqd3EWlx6/ah/xg3gdeukelPqDWdsg36vuO5TW3HxLiVeLt4ydbX2zCqDWUMOPOI6vF9JAO6GVZs4D+kcUs6BGRw8eMalG/4qCOCvGkv1ptWbmFb8ltnDjsQrwPujdyt86/
+			 snO0jnwHEOSvknbwZ54v3wu21SvTz17vu9tr8dr/G9wwZCusFMsXQOPOegKN0fvVMcLjFL9XLVG+yJ/p71w0P5JF4BXqP4bf1uOs9BOgeFrGl+9zQSZg1Jqleg3j2epSPV69n3ToL6YteJpHqF6iUbzrf2v+4stnFK4l2DVzG3HR33J/EbSOcgdg5gZvJNi7VmH8wT8aV616kXbJ79jE7XTR1CLfFuwKs4s4zn97rF9H5V6RzWOgdixirDEb62+8U7Pz0nsKx4+cbH+ywIzcPLtXf+AbM8E+Ll2lq84IHnnDP/Y3D7wxX37PRDvt1k+rML56LYfLz3Z/zQqRddHvkBDz/T79o98YOe8V/9OhKETh9GlTBz/
+			 tEXSdh23VlNEC8vsE3pfSd29tD7CPnD4prdBYBMn+3i2sNReeOp/9I2m9ltzex+n/y1FZucVOT2+w/FlSPZ7s4Ms9KaFNuzWXtUbTnpvdTSdmGG5CpNmjRp0qRJkyZNmjRp0qRJkyZNmjRp0qRJkyZNbJ1ymXPOvVl21hwinriBlVyRMiwndW0P9jupAKCNhyD2StTGVRabVS1puq73qrEbmKumpiO9NKIn1eISCo63rZVKqMoGnfYgvjZuRfuujGWD3FNrhH/
+			 6wRyXUOxhLUu9Nvl0aKZ6jWm6BKtSr04+y6jUDAXQ1bW6f9vOqOSlsvS/Lhrj8GChzkejTvIz1bT4IU9+/uqaFu0fHWklxrxyop4W5saa9khhSpMw/xWt1AwLu4IMkE8SxjeMimFm5yVML5aYP8vtjOlVhOveXQt6geJ1sK6yfwC53MQ6QkjX1WZQOKuuIj+2Wqe5NJuoEMNbU5FHzolypbeTtaWlIi/r5YLu/8PDq6JbL/1uyU8Z4YYXcYjUVcikgHqEQBWjdhpvmWQvLEMR64ypjl/
+			 cIC8RIH1Oo1SwjsOHtqJ5LGmaWiAGZUeqT99oq/Bve9xEqq4XwkOPlvAN42ajRIJiklBBU328gAPXmZwaTaTjxqiOoagl/6E5UGSsDhtDlRS/TPHqahwvDvBqOsmWiiGpQuLs8hbWfbwq5D2oMV2ISTLaIc+vPmpAKnjsHRiv4wivqvt4EQ9vG2laFHbxD6GiwyXy+U/XLy7N7agAxN3x2AYUatsHVCHRpwFemseSpnYN0zAMp4017Gd2hDV068A1o9tAwUWIrqPeigQttxH2pBrgLZd03Ga93RLrWoXsuZg3KRyL1KQ5id2ZQo3xma/Bq/
+			 cswzCtWhEkheJ8WbwaqsXxzrHeg1sanWrJU0B2vPBgNE0fB8UwTJLZWx3P4cM/ey/EWwVAYw+QcwuAiiFeDXdTeAP3CSUZm15OdTyiqZgQ3Q9ggEfrBSxWQ0/nFG+nh/BtrC0pIhScQ+MX37gFTEFCUI384q3FSz1VJXwYPLyAxIrhbeiYujNrqWyFd47RtKmr8bPSbxGOvGOA10GRmgxQZcFjCnihztFsc/
+			 BCmQ7Ij02dSdzo6b5Ta4G4k17Qx2sB3Ua8pZ6hsJpQSEA02v+6gnsRRa7DOwyQksLE3lhg8JYgd03f5VK8Qx3XYilnxWsc6LrZwug2dpWLt4EQo6am7kseaje05siXvxivVdAw8whrULqOJ790ljy8nSakltiXPYKkuizxGUL16Htws0x4AYaO2XtFePXmEuqmd6BQqF6kN2MbFrPihVa1rXRKuhaTLw+vqfrioAZYvcvwOWshza+2HLyQbdKzAO+lMQl0ep4eDJyUBU3PGFOfwlpF1XR824pyinQmm2Ea2fA6WItVWRavUoWykjuHvpekXF9F3bmMeOGJE1GNEB6xl3l4a1D32JhN8M+Kh7dhQLPlNTYMXr+AxlL1WzFQXoOJrYx1UtFB03rqTziAzivQ+MU6vL4VVdJ9U1HVj2OhOKGuqiEjK15FZRp0JY7XUNrY85cBXuMWeykfzOmNM+Kl8aGYBVb7PLxTrMfOTYaqSB6Jh1cBsZE+coRXv62Dtcl18gfclP8gxPaxoLEgendUXUsN1wC5N3jAqT/
+			 7YsxB9ODpodtK7llGWoyjA3jNzHixFpN+HK9JmlwzxKuYkx50ASFlze9RZsRbp93jBsLsy1M8vOCsxvGoiPQdfLxWz3O/EV6N9ML9EYBXoklavZBgh69eiNwA/ZTSYyujWz0ogJK8Vq8DeNk3O7rQsVa2UW+NCRTH6zV99QgvpFwZYZKyP85h8XaEeOEX288Z0puMfAXq7bFxbz39UbykYuI2ixerqooBFB2rQu4Rk4BV0gkZ4nvZGkrT01DDNMcI9bhjfKs2hqaHqEHXY10JWr8y+94C+/gSeL1+yNTBbNuplFc9eKKkUn0xXh9ieBlN461CuzMiVgRvWWPQ8X2vyiRl9nQvBsULg0pNXdVCvLhWLpen0FGm4iQ9hyVTGKhpJhmQ09isgaKbljcixmn366cN/V1yVmg91v6Zvj/PiBeq0wEbKImXDIPwSI/
+			 hJcNy3XOJCxQ1DdA9bJLPFF7wMLQSw9iA7Ztxew6FWFsAXStE8hrghV6S3mujeM8BMAQdeejb9EIUnaDXuYRnFt3UCtJz/ALHHnn4u8+C6LSLNUa+oBVvNJAJbwVrMXeYxgtDcA3+5+NlngoiJ9pANQ1HYm3fS6bxkk69Sg2FQlME/V7QSjTQMWzdv2mI12wCcC2OF3xA0KLBqA3VaXSrQZ8NdJ9BxlTVxtx3huEosQjul/XMFS2Y6ICGcqZ44tcQzajRCobfa0dt9AnXtKCrHrFI4CWZ1yje1kGNpgJkSCJlTQ9GkEtwUV0eXgNqU6vs+FZkfxSN2lCDCsgCXapWDK9S9obX8X5vDRpzqk7oS6IemUk05yUUulwHRqB4VIbhfK0B3qDC4gVOiHH3FnSWbslp152qTjVvHZCRJClcBZpCHDxnHS+twBJ4HbjktCAwOoh3WdJ4FehU+nihzcRt0ohYxaA1hVErajumYs11OgAleOudIFnDIxPNJTpQqvALFy/pXKPS3PQ6SEindSvCSypDEq8yiVqQVgFIFtwCtL8oarSdAzKpVih4rbIn72gKqUyKFebDrEPPAG7gFkKSMLiDm0EbSqbmVDrKA7xhpSz8oyRmzIhhCDxOzOpz8HoF9vqtY5JKwcaFcCrL9C8VVMg2LWAVqlLgCwo1Mq5l3c+QaUn4eJWVB8j2AAUuk8FLWgM/jxoKpmyNEsIN+tiWY+xNUMAVps5bbR0cBDwYXGp5NypE07UrjFQmi6smRnRmOIDTGZGesBd7GkwYNVFkBYK34M9rOsFFjJupt0lbKqbzvUyHpYH9WSXQkz+tjFEw/2zWg4SbtHNYVaNkodGAG6nMuHOpoqAZUm6xGuH9Jypud0zKRwCNgw5nBeNouu0WvpB/FIvtoBly4N/B+MDoLmDA0Rsl3okrV5slrTRu0dQXxXaorGmxWGRkZnRHzVKpOWF7u+X5GIrZaIXtnjEpRrbws+A9I4tem8w5L+VVikWvley0i9FUT2dUpA/NXBYh5fGU0YUzHZf03qwWMKy1mXQd8pVtO81JsR1EnhbbUQnY4hrddk/XesVoZgXyPg2/QN5IHv8Lfj6EvCFTkZQAAAAASUVORK5CYII="
+             alt="Rhino Logo" />
+
+        <h2>Thank You for Visiting — Share Your Details</h2>
+
+        <!-- Salesforce Web-to-Lead -->
+        <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DdN00000YPjfw" method="POST">
+
+            <input type="hidden" name="oid" value="00DdN00000YPjfw">
+            <input type="hidden" name="retURL" value="http://google.com">
+            <input type="hidden" name="lead_source" value="Expo Exhibition">
+
+            <!-- Name -->
+            <div class="form-row">
+                <label>Name*</label>
+                <input type="text" name="last_name" required>
+            </div>
+
+            <!-- Company -->
+            <div class="form-row">
+                <label>Company*</label>
+                <input type="text" name="company" required>
+            </div>
+
+            <!-- Phone -->
+            <div class="form-row">
+                <label>Mobile*</label>
+                <input type="tel" name="phone" required>
+            </div>
+
+            <!-- Email -->
+            <div class="form-row">
+                <label>Email*</label>
+                <input type="email" name="email" required>
+            </div>
+
+            <!-- Profession - Always Visible OPTIONS -->
+            <div class="form-row">
+                <label>Profession*</label>
+
+                <label class="radio-option">
+                    <input type="radio" name="00NOS000000p4ZR" value="Architect / Interior" required>
+                    Architect / Interior
+                </label>
+
+                <label class="radio-option">
+                    <input type="radio" name="00NOS000000p4ZR" value="Industry / OEM">
+                    Industry / OEM
+                </label>
+
+                <label class="radio-option">
+                    <input type="radio" name="00NOS000000p4ZR" value="Consultant">
+                    Consultant
+                </label>
+
+                <label class="radio-option">
+                    <input type="radio" name="00NOS000000p4ZR" value="Other">
+                    Other
+                </label>
+            </div>
+
+            <!-- Other Profession -->
+            <div class="form-row" id="otherProfessionField" style="display:none;">
+                <label>Other Profession</label>
+                <input id="00NOS000000p2Pa" name="00NOS000000p2Pa" type="text" placeholder="Please specify">
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        const radios = document.getElementsByName("00NOS000000p4ZR");
+        const otherDiv = document.getElementById("otherProfessionField");
+
+        radios.forEach(r => {
+            r.addEventListener("change", () => {
+                if (r.value === "Other") {
+                    otherDiv.style.display = "flex";
+                } else {
+                    otherDiv.style.display = "none";
+                    document.getElementById("00NOS000000p2Pa").value = "";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
